@@ -8,12 +8,14 @@ Buffalo Bill will freak out.  If ok, the statement ends.  Whatever the user inpu
 via .lower to convert it to lowercase.  
 '''
 
+import os
+
 #Statements.  Can be added or modded without having to dive into the code.
 lotionOn = "\nBuffalo Bill - It rubs the lotion on It's skin, or else It gets the hose again...\n"
 basketIn = "\nBuffalo Bill - Now It puts the lotion into the basket.\n"
 basketAngry = "\nBuffalo Bill - Put the FUCKIN' lotion into thuh buuuaaasskuutt!\n" 
 basketGood = "\nBuffalo Bill - Guuuuddd... guuuuddd... \n"
-billMoan = "\n Uuuuwahhhhhhaaaaahhhh!!!!\n"
+billMoan = "\nBuffalo Bill - Uuuuwahhhhhhaaaaahhhh!!!!\n"
 precious = "\nPrecious - Arf! Arf!\n"
 preciousHose = "\nBuffalo Bill - The hose, Precious, It will get the hose... \n"
 lectorReminder = '\nHannibal Lector - Quid pro quo... enter "OK" or "no" \n'
@@ -22,9 +24,13 @@ lectorReminder = '\nHannibal Lector - Quid pro quo... enter "OK" or "no" \n'
 #you are reminded by Lector of the syntax, Precious barks.
 lotionCount = 0 #the starting point for the loop
 while True:
+    os.system('clear')
+    os.system('cat asciiPit')
     print(lotionOn)
     lotionCount = lotionCount + 1 #will increase the number of times to loop by 1
     if lotionCount == 3: #every 3rd iteration of the loop.  Every 3 times
+        os.system('clear')
+        os.system('cat asciiPrecious')
         print(precious)
         print(preciousHose)
         lotionCount = 0
@@ -34,7 +40,10 @@ while True:
     elif answerLotion.lower() == 'no': #the .lower converts the user input into lowercase
         continue
     else:
+        os.system('clear')
+        os.system('cat asciiLector')
         print(lectorReminder)
+        input('press Enter if you understand me.')
 
 #Basket part.  Bill asks you to put the lotion into the basket.  This will loop 3 times and then 
 # he freaks out.  But if you break the loop with an OK, he praises you (sort of).  As ususal
@@ -42,18 +51,26 @@ while True:
   
 basketCount = 0
 while basketCount < 3:
-    basketCount = basketCount + 1 
+    basketCount = basketCount + 1
+    os.system('clear')
+    os.system('cat asciiPit') 
     print(basketIn)
     answerBasket = input()
     if answerBasket.lower() == 'ok':
+        os.system('clear')
+        os.system('cat asciiPit')
         print(basketGood)
         break
     
     elif basketCount == 3:
+        os.system('clear')
+        os.system('cat asciiFreakout')
         print(basketAngry)
         basketCount = 0
         answerBasket = input()
         if answerBasket.lower() == 'ok':
+            os.system('clear')
+            os.system('cat asciiGumb')
             print(billMoan)
             break
         continue
@@ -62,4 +79,7 @@ while basketCount < 3:
         continue
 
     else:
+        os.system('clear')
+        os.system('cat asciiLector')
         print(lectorReminder)
+        input('press Enter if you understand me.')
