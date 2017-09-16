@@ -1,4 +1,4 @@
-#! /usr/bin/python3
+#!/usr/bin/env python3
 
 '''This is a tribute to the pit scene from Silence of the Lambs.  This script will ask you to rub the
 lotion on your skin or else you get the hose again.  You will be prompted with an ok/no option.  
